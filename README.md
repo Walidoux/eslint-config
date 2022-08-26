@@ -14,8 +14,19 @@ NPM  ➜  npm install --save-dev eslint @walidoux/eslint-config
 
 ## Usage
 
-Add it to your project inside `package.json`'s file.
+Create a `.eslintrc` configuration and extend the base configuration.
 
 ```json
-{ "eslint": "@walidoux/eslint-config" }
+{ "extends": "@walidoux/eslint-config" }
+```
+
+When extending multiple configurations, keep the base configuration first.
+
+```json
+{
+  "extends": [
+    "@walidoux/eslint-config",
+    "other-sort-of-plugin"
+  ]
+}
 ```
