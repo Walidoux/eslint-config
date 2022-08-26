@@ -1,0 +1,70 @@
+{
+  "name": "@walidoux/eslint-config",
+  "version": "1.0.0",
+  "description": "Walidoux's Eslint config.",
+  "author": "Walid Korchi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/walidoux/eslint-config"
+  },
+  "homepage": "https://github.com/walidoux/eslint-config/#readme",
+  "bugs": {
+    "email": "contact@walidkorchi.com",
+    "url": "https://github.com/Walidoux/eslint-config/issues"
+  },
+  "keywords": [
+    "eslint",
+    "conventions",
+    "config"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "prettier": "@walidoux/prettier-config",
+  "husky": {
+    "hooks": {
+      "pre-commit": "nano-staged"
+    }
+  },
+  "nano-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "prettier --ignore-path .eslintignore --write"
+    ],
+    "**/*.{json,md,yml}": [
+      "prettier --ignore-path .eslintignore --write"
+    ]
+  },
+  "scripts": {
+    "lint:eslint": "eslint '**/*.js' --fix",
+    "lint:prettier": "prettier '**/*.{js,json,md,yml}' --ignore-path .eslintignore --write --loglevel silent",
+    "lint-all": "npm-run-all lint:*",
+    "release": "npm login && npm publish"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "eslint": "^8.22.0",
+    "eslint-config-conventions": "^3.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-unicorn": "^43.0.2",
+    "husky": "8.0.1",
+    "nano-staged": "^0.8.0",
+    "np": "^7.6.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.22.0",
+    "prettier": ">=2.7.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
