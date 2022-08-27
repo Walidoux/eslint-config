@@ -1,6 +1,6 @@
 {
   "name": "@walidoux/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Walidoux's Eslint config.",
   "author": "Walid Korchi",
   "license": "MIT",
