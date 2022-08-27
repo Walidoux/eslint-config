@@ -24,9 +24,6 @@ When extending multiple configurations, keep the base configuration first.
 
 ```json
 {
-  "extends": [
-    "@walidoux/eslint-config",
-    "other-sort-of-plugin"
-  ]
+  "extends": ["@walidoux/eslint-config", "other-sort-of-plugin"]
 }
 ```
